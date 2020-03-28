@@ -8,11 +8,10 @@ class Phrase {
 
     /**
      * adds letter placeholders to the display when the game starts
-     * @param   phrase the phrase who the player has to guess
      */
-    addPhraseToDisplay(phrase) {
-        for(let i = 0; i < phrase.length; i++) {
-            let phraseChar = phrase[i];
+    addPhraseToDisplay() {
+        for(let i = 0; i < this.phrase.length; i++) {
+            let phraseChar = this.phrase[i];
             let charLi;
             if(phraseChar === " ") {
                 charLi = `<li class="space"> </li>`;
@@ -22,12 +21,22 @@ class Phrase {
             $('#phrase ul').append(charLi);
         }
     }
-
-    checkLetter() {
-
+    /**
+     *  checks to see if the letter selected by the player matches a letter in the phrase.
+     * @param   letter a char which the player guessed
+     * @return  boolean
+     */
+    checkLetter(letter) {
+        return this.phrase.indexOf(letter) >= 0;
     }
 
-    showMatchedLetter() {
-
+    /**
+     *  reveals the letter(s) on the board that matches the player's selection
+     * @param   letter a char which the player guessed
+     */
+    showMatchedLetter(letter) {
+        if(this.checkLetter(letter)) {
+            $(".letter").removeClass("hide");
+        }
     }
 }
