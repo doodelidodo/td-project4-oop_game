@@ -65,6 +65,13 @@ button {
 	margin: 0 auto;
 }
 
+/*https://codepen.io/sdthornton/pen/wBZdXq*/
+#btn__reset:hover {
+  color: darkred;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -130,6 +137,11 @@ button {
   justify-content: center;
 }
 
+.key:hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
 .chosen {
   background: #3a3f58;
   border-radius: 5px;
@@ -189,6 +201,7 @@ button {
 
 .win {
   background-color: var(--color-win);
+  transition: background-color 2s
 }
 
 .win a {
@@ -197,8 +210,62 @@ button {
 
 .lose {
   background-color: #f5785f;
+  transition: background-color 2s
 }
 
 .lose a {
   color: var(--color-lose);
 }
+
+
+
+/*https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08*/
+#game-over-message {
+
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+
+  transition: font-size 3s;
+
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+
+

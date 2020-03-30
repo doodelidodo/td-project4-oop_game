@@ -36,7 +36,9 @@ class Phrase {
      */
     showMatchedLetter(letter) {
         if(this.checkLetter(letter)) {
-            $(".letter").removeClass("hide");
+            const $letters = $("." + letter);
+            $letters.removeClass("hide");
+            $letters.addClass("show");
         }
     }
 }
