@@ -12,3 +12,4 @@ Used technologies:
 additional:
 some css transition where also implemented for the background color and the won or loose text
 there are also hover states for the start and the keyboard buttons.
+added a picture

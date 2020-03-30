@@ -129,6 +129,13 @@ button {
   animation-duration: .5s;
 }
 
+.hunter {
+  width: 250px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 0 auto;
+}
+
 
 /* Keyboard */
 
