@@ -4,6 +4,7 @@
 
 let game;
 const $qwertyButton = $("#qwerty button");
+let keysClicked = [];
 
 
 /**
@@ -27,8 +28,10 @@ $qwertyButton.on('click', function() {
  * Event handler for keydown on the keyboard
  */
 $(window).on('keydown', (e) => {
-    console.log(e.key);
-    game.handleInteraction(e.key);
+    if (!(keysClicked.includes(e.key))) {
+        game.handleInteraction(e.key);
+        keysClicked.push(e.key);
+    }
 });
 
 /**
