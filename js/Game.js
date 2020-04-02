@@ -9,7 +9,7 @@ class Game {
         this.phrases = [
             new Phrase("There is no place like home"),
             new Phrase("Live long and prosper"),
-            new Phrase("Stay the fuck home"),
+            new Phrase("Highly illogical"),
             new Phrase("May the force be with you"),
             new Phrase("Stay at home")
         ];

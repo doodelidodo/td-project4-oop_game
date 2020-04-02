@@ -21,7 +21,10 @@ $("#btn__reset").on('click', e => {
  */
 $qwertyButton.on('click', function() {
     let $key = $(this).text();
-    game.handleInteraction($key);
+    if(!(keysClicked.includes($key))) {
+        game.handleInteraction($key);
+        keysClicked.push($key);
+    }
 });
 
 /**
@@ -45,6 +48,7 @@ function resetGame(game) {
         .removeClass("wrong")
         .addClass("key");
     $(".tries img").attr("src", "images/liveHeart.png");
+    keysClicked = [];
 }
 
 
