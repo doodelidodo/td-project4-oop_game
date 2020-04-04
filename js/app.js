@@ -11,7 +11,7 @@ let keysClicked = [];
  * Event handler on click on the start button: resets and starts the game
  */
 $("#btn__reset").on('click', e => {
-    resetGame(game);
+    resetGame();
     game = new Game();
     game.startGame();
 });
@@ -31,16 +31,18 @@ $qwertyButton.on('click', function() {
  * Event handler for keydown on the keyboard
  */
 $(window).on('keydown', (e) => {
-    if (!(keysClicked.includes(e.key))) {
-        game.handleInteraction(e.key);
-        keysClicked.push(e.key);
+    if(game) {
+        if (!(keysClicked.includes(e.key))) {
+            game.handleInteraction(e.key);
+            keysClicked.push(e.key);
+        }
     }
 });
 
 /**
  * function resets the game, so a new one can get started
  */
-function resetGame(game) {
+function resetGame() {
     $("#phrase li").remove();
     $qwertyButton
         .removeAttr("disabled")
